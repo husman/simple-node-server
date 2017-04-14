@@ -1,13 +1,13 @@
-FROM centos:centos6
+FROM mhart/alpine-node
 
-RUN yum install -y epel-release
+WORKDIR /src
 
-RUN yum install -y nodejs npm
+COPY package.json .
+COPY index.js .
+RUN npm i
 
-COPY . /opt
+COPY . .
 
-WORKDIR /opt
+EXPOSE 8000
 
-EXPOSE 9090
-
-CMD node server.js
+CMD ["npm", "start"]
