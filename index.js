@@ -5,7 +5,7 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-	res.send('Hello ECS!');
+	res.send('Hello ECS!!');
 });
 
 app.listen(8000, () => console.log('The server is running...'));
